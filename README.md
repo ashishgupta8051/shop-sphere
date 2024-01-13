@@ -1,16 +1,6 @@
-# shopsphere
+**ShopSphere**
 
-A new Flutter project.
+**Shop**: Refers to a place where goods or services are sold.
+* **Sphere**: In this case, it adds a sense of completeness or all-encompassing, suggesting a wide range of products or a comprehensive shopping experience.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+An e-commerce app is a virtual marketplace where businesses and consumers interact for the purpose of buying and selling products or services over the internet. It provides users with a convenient and accessible way to shop from the comfort of their homes or on the go through mobile devices.
