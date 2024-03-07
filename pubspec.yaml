@@ -42,7 +42,6 @@ flutter:
     - assets/images/on_board_images/
 
 
-
   fonts:
     - family: Poppins
       fonts:

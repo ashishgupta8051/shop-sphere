@@ -1,4 +1,4 @@
-import 'package:ShopSphere/features/authentication/screens/onboard.dart';
+import 'package:ShopSphere/features/authentication/screens/onboarding/onboard.dart';
 import 'package:ShopSphere/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,7 +14,7 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
-      home: OnBoardingScreen(),
+      home: const OnBoardingScreen(),
     );
   }
 }
