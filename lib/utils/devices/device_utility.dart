@@ -47,7 +47,7 @@ class TDeviceUtils {
     return MediaQuery.of(Get.context!).padding.top;
   }
 
-  static double betBottomNavigationBarHeight() {
+  static double getBottomNavigationBarHeight() {
     return kBottomNavigationBarHeight;
   }
 

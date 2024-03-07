@@ -1,5 +1,7 @@
+import 'package:ShopSphere/features/authentication/screens/onboard.dart';
 import 'package:ShopSphere/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 
 class App extends StatelessWidget {
@@ -7,11 +9,12 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.system,
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
+      home: OnBoardingScreen(),
     );
   }
 }
