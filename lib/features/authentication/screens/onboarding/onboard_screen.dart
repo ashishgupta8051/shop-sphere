@@ -1,12 +1,12 @@
-import 'package:ShopSphere/features/authentication/controllers.onboarding/onboarding_controllers.dart';
+import 'package:ShopSphere/features/authentication/screens/onboarding/widgets/onboarding_next_button.dart';
+import 'package:ShopSphere/features/authentication/screens/onboarding/widgets/onboarding_skip.dart';
 import 'package:ShopSphere/utils/constants/image_strings.dart';
 import 'package:ShopSphere/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'onboarding_bot_navigation.dart';
-import 'onboarding_next_button.dart';
-import 'onboarding_page.dart';
-import 'onboarding_skip.dart';
+import '../../controllers/onboarding/onboarding_controllers.dart';
+import 'widgets/onboarding_bot_navigation.dart';
+import 'widgets/onboarding_page.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});

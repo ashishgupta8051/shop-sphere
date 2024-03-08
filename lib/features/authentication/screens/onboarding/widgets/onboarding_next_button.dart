@@ -1,11 +1,12 @@
-import 'package:ShopSphere/features/authentication/controllers.onboarding/onboarding_controllers.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../../../../utils/constants/colors.dart';
-import '../../../../utils/constants/sizes.dart';
-import '../../../../utils/devices/device_utility.dart';
-import '../../../../utils/helpers/helper_functions.dart';
+import '../../../../../utils/constants/colors.dart';
+import '../../../../../utils/constants/sizes.dart';
+import '../../../../../utils/devices/device_utility.dart';
+import '../../../../../utils/helpers/helper_functions.dart';
+import '../../../controllers/onboarding/onboarding_controllers.dart';
+
 
 class OnBoardingNextButton extends StatelessWidget {
   const OnBoardingNextButton({

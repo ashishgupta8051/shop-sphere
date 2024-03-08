@@ -1,8 +1,8 @@
-import 'package:ShopSphere/features/authentication/controllers.onboarding/onboarding_controllers.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../utils/constants/sizes.dart';
-import '../../../../utils/devices/device_utility.dart';
+import '../../../../../utils/constants/sizes.dart';
+import '../../../../../utils/devices/device_utility.dart';
+import '../../../controllers/onboarding/onboarding_controllers.dart';
 
 class OnBoardingSkip extends StatelessWidget {
   const OnBoardingSkip({

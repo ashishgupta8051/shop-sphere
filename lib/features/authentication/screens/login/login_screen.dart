@@ -5,10 +5,11 @@ import 'package:ShopSphere/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../common/widgets.login_signup/form_divider.dart';
-import '../../../../common/widgets.login_signup/form_footer.dart';
-import 'login_form.dart';
-import 'login_header.dart';
+
+import '../../../../common/widgets/login_signup/form_divider.dart';
+import '../../../../common/widgets/login_signup/form_footer.dart';
+import 'widgets/login_form.dart';
+import 'widgets/login_header.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});

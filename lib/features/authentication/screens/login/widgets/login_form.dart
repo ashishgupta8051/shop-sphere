@@ -1,11 +1,13 @@
 
 
-import 'package:flutter/cupertino.dart';
+import 'package:ShopSphere/features/authentication/screens/password_configuration/forget_password.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../../../../utils/constants/sizes.dart';
-import '../../../../utils/constants/text_strings.dart';
+import '../../../../../utils/constants/sizes.dart';
+import '../../../../../utils/constants/text_strings.dart';
+import '../../signup/signup_screen.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({
@@ -50,7 +52,9 @@ class LoginForm extends StatelessWidget {
                     ],
                   ),
                   TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(() => const ForgetPassword());
+                      },
                       child: const Text(TTexts.forgetPassword))
                 ],
               ),
@@ -71,7 +75,9 @@ class LoginForm extends StatelessWidget {
               SizedBox(
                   width: double.infinity,
                   child: OutlinedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(() => const SignupScreen());
+                      },
                       child: const Text(TTexts.createAccount))),
             ],
           ),

@@ -1,4 +1,4 @@
-import 'package:ShopSphere/features/authentication/screens/onboarding/onboard.dart';
+import 'package:ShopSphere/features/authentication/screens/onboarding/onboard_screen.dart';
 import 'package:ShopSphere/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
