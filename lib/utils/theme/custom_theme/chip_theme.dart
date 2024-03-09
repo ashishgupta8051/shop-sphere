@@ -1,3 +1,4 @@
+import 'package:ShopSphere/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class TChipTheme {
@@ -6,7 +7,7 @@ class TChipTheme {
   static ChipThemeData lightChipTheme = ChipThemeData(
     disabledColor: Colors.grey.withOpacity(0.4),
     labelStyle: const TextStyle(color: Colors.black),
-    selectedColor: Colors.blue,
+    selectedColor: TColors.primary,
     padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 12.0),
     checkmarkColor: Colors.white,
   );
@@ -14,7 +15,7 @@ class TChipTheme {
   static ChipThemeData darkChipTheme = const ChipThemeData(
     disabledColor: Colors.grey,
     labelStyle: TextStyle(color: Colors.white),
-    selectedColor: Colors.blue,
+    selectedColor: TColors.primary,
     padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 12.0),
     checkmarkColor: Colors.white,
   ); // ChipThemeData
