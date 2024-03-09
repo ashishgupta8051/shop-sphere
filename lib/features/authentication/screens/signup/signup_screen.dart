@@ -2,8 +2,10 @@
 import 'package:ShopSphere/features/authentication/screens/signup/verify_email.dart';
 import 'package:ShopSphere/features/authentication/screens/signup/widgets/signup_form.dart';
 import 'package:ShopSphere/features/authentication/screens/signup/widgets/terms_condition.dart';
+import 'package:ShopSphere/utils/constants/colors.dart';
 import 'package:ShopSphere/utils/constants/sizes.dart';
 import 'package:ShopSphere/utils/helpers/helper_functions.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,7 +20,18 @@ class SignupScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        automaticallyImplyLeading: true,
+        leading: GestureDetector(
+          onTap: () {
+            Get.back();
+          },
+          child: Icon(
+            CupertinoIcons.back,
+            color: dark ? TColors.white : TColors.black, // Change the color of the arrow icon
+          ),
+        ),
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(TSizes.defaultSpace),

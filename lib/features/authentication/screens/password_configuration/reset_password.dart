@@ -1,4 +1,3 @@
-import 'package:ShopSphere/features/authentication/screens/login/login_screen.dart';
 import 'package:ShopSphere/utils/constants/image_strings.dart';
 import 'package:ShopSphere/utils/constants/sizes.dart';
 import 'package:ShopSphere/utils/constants/text_strings.dart';
@@ -50,7 +49,7 @@ class ResetPassword extends StatelessWidget {
                   width: double.infinity,
                   child: ElevatedButton(
                       onPressed: () {
-                        Get.off(() => const LoginScreen());
+                        Get.back();
                       },
                       child: const Text(TTexts.done))),
               const SizedBox(height: TSizes.spaceBtwItems),
