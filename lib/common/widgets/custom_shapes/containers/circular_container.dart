@@ -1,9 +1,9 @@
 import 'package:ShopSphere/utils/constants/colors.dart';
 import 'package:flutter/cupertino.dart';
 
-class TCircularContainer extends StatelessWidget {
-  const TCircularContainer({
-    super.key, this.width = 400, this.height = 400, this.radius = 400, this.padding = 0, this.child, this.backgroundColor = TColors.white,
+class SCircularContainer extends StatelessWidget {
+  const SCircularContainer({
+    super.key, this.width = 400, this.height = 400, this.radius = 400, this.padding = 0, this.child, this.backgroundColor = SColors.white,
   });
 
   final double? width;

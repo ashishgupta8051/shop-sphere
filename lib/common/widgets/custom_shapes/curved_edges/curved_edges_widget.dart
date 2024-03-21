@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 
 import 'curved_edges.dart';
 
-class TCurvedEdgeWidget extends StatelessWidget {
-  const TCurvedEdgeWidget({
+class SCurvedEdgeWidget extends StatelessWidget {
+  const SCurvedEdgeWidget({
     super.key, required this.child,
   });
 
@@ -12,7 +12,7 @@ class TCurvedEdgeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipPath(
-      clipper: TCustomCurvedEdges(),
+      clipper: SCustomCurvedEdges(),
       child: child,
     );
   }

@@ -21,35 +21,35 @@ class TermsCondition extends StatelessWidget {
             height: 24,
             width: 24,
             child: Checkbox(value: true, onChanged: (value) {})),
-        const SizedBox(width: TSizes.spaceBtwItems),
+        const SizedBox(width: SSizes.spaceBtwItems),
         Text.rich(TextSpan(children: [
           TextSpan(
-              text: '${TTexts.iAgreeTo} ',
+              text: '${STexts.iAgreeTo} ',
               style: Theme.of(context).textTheme.bodySmall),
           TextSpan(
-              text: TTexts.privacyPolicy,
+              text: STexts.privacyPolicy,
               style: Theme.of(context)
                   .textTheme
                   .bodyMedium
                   ?.apply(
-                color: dark ? TColors.white : TColors.primary,
+                color: dark ? SColors.white : SColors.primary,
                 decoration: TextDecoration.underline,
                 decorationColor:
-                dark ? TColors.white : TColors.primary,
+                dark ? SColors.white : SColors.primary,
               )),
           TextSpan(
-              text: ' ${TTexts.and} ',
+              text: ' ${STexts.and} ',
               style: Theme.of(context).textTheme.bodySmall),
           TextSpan(
-              text: TTexts.termsOfUse,
+              text: STexts.termsOfUse,
               style: Theme.of(context)
                   .textTheme
                   .bodyMedium
                   ?.apply(
-                color: dark ? TColors.white : TColors.primary,
+                color: dark ? SColors.white : SColors.primary,
                 decoration: TextDecoration.underline,
                 decorationColor:
-                dark ? TColors.white : TColors.primary,
+                dark ? SColors.white : SColors.primary,
               )),
         ]))
       ],

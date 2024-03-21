@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class TTextTheme {
-  TTextTheme._();
+class STextTheme {
+  STextTheme._();
 
   /// Customizable Light Text Theme
   static TextTheme lightTextTheme = TextTheme(

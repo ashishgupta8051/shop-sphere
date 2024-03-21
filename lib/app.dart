@@ -13,10 +13,10 @@ class App extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.system,
-      theme: TAppTheme.lightTheme,
-      darkTheme: TAppTheme.darkTheme,
-      // home: const OnBoardingScreen(),
-      home: const NavigationMenu(),
+      theme: SAppTheme.lightTheme,
+      darkTheme: SAppTheme.darkTheme,
+      home: const OnBoardingScreen(),
+      // home: const NavigationMenu(),
     );
   }
 }

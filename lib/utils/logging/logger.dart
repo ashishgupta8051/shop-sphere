@@ -2,7 +2,7 @@
 
 import 'package:logger/logger.dart';
 
-class TLogger{
+class SLogger{
 
   static final Logger _logger = Logger(
     level:  Level.debug,

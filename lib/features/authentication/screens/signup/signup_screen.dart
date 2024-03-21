@@ -18,7 +18,7 @@ class SignupScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
+    final dark = SHelperFunctions.isDarkMode(context);
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
@@ -28,30 +28,30 @@ class SignupScreen extends StatelessWidget {
           },
           child: Icon(
             CupertinoIcons.back,
-            color: dark ? TColors.white : TColors.black, // Change the color of the arrow icon
+            color: dark ? SColors.white : SColors.black, // Change the color of the arrow icon
           ),
         ),
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(TSizes.defaultSpace),
+          padding: const EdgeInsets.all(SSizes.defaultSpace),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               /// Title
-              Text(TTexts.signupTitle,
+              Text(STexts.signupTitle,
                   style: Theme.of(context).textTheme.headlineMedium),
-              const SizedBox(height: TSizes.spaceBtwSections),
+              const SizedBox(height: SSizes.spaceBtwSections),
               /// Form
               const SignupForm(),
               /// Term Condition check
               const SizedBox(
-                height: TSizes.spaceBtwInputFields,
+                height: SSizes.spaceBtwInputFields,
               ),
               TermsCondition(dark: dark),
               /// Signup Button
               const SizedBox(
-                height: TSizes.spaceBtwSections,
+                height: SSizes.spaceBtwSections,
               ),
               SizedBox(
                 width: double.infinity,
@@ -59,17 +59,17 @@ class SignupScreen extends StatelessWidget {
                   onPressed: () {
                     Get.to(() => const VerifyEmailScreen());
                   },
-                  child: const Text(TTexts.createAccount),
+                  child: const Text(STexts.createAccount),
                 ),
               ),
               /// Divider
               const SizedBox(
-                height: TSizes.spaceBtwSections,
+                height: SSizes.spaceBtwSections,
               ),
-              FormDivider(dark: dark, dividerText: TTexts.orSignUpWith.capitalize!),
+              FormDivider(dark: dark, dividerText: STexts.orSignUpWith.capitalize!),
               /// Footer
               const SizedBox(
-                height: TSizes.spaceBtwSections,
+                height: SSizes.spaceBtwSections,
               ),
               const FormFooter()
             ],

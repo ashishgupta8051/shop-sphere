@@ -22,47 +22,47 @@ class SignupForm extends StatelessWidget {
                   child: TextFormField(
                     expands: false,
                     decoration: const InputDecoration(
-                        labelText: TTexts.firstName,
+                        labelText: STexts.firstName,
                         prefixIcon: Icon(Iconsax.user)),
                   ),
                 ),
                 const SizedBox(
-                  width: TSizes.spaceBtwInputFields,
+                  width: SSizes.spaceBtwInputFields,
                 ),
                 Expanded(
                   child: TextFormField(
                     expands: false,
                     decoration: const InputDecoration(
-                        labelText: TTexts.lastName,
+                        labelText: STexts.lastName,
                         prefixIcon: Icon(Iconsax.user)),
                   ),
                 ),
               ],
             ),
             const SizedBox(
-              height: TSizes.spaceBtwInputFields,
+              height: SSizes.spaceBtwInputFields,
             ),
 
             /// Username
             TextFormField(
               decoration: const InputDecoration(
-                  labelText: TTexts.username,
+                  labelText: STexts.username,
                   prefixIcon: Icon(Iconsax.user_edit)),
             ),
 
             /// Email
             const SizedBox(
-              height: TSizes.spaceBtwInputFields,
+              height: SSizes.spaceBtwInputFields,
             ),
             TextFormField(
               decoration: const InputDecoration(
-                  labelText: TTexts.email,
+                  labelText: STexts.email,
                   prefixIcon: Icon(Iconsax.direct)),
             ),
 
             /// Phone
             const SizedBox(
-              height: TSizes.spaceBtwInputFields,
+              height: SSizes.spaceBtwInputFields,
             ),
             TextFormField(
               keyboardType: TextInputType.number,
@@ -72,18 +72,18 @@ class SignupForm extends StatelessWidget {
                 // Accept digits only
               ],
               decoration: const InputDecoration(
-                  labelText: TTexts.phoneNo,
+                  labelText: STexts.phoneNo,
                   prefixIcon: Icon(Iconsax.call)),
             ),
 
             ///Password
             const SizedBox(
-              height: TSizes.spaceBtwInputFields,
+              height: SSizes.spaceBtwInputFields,
             ),
             TextFormField(
               obscureText: true,
               decoration: const InputDecoration(
-                  labelText: TTexts.password,
+                  labelText: STexts.password,
                   suffixIcon: Icon(Iconsax.eye_slash),
                   prefixIcon: Icon(Iconsax.password_check)),
             ),
