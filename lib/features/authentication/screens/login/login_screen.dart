@@ -16,11 +16,11 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
+    final dark = SHelperFunctions.isDarkMode(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: TSpacingStyle.paddingWithAppBarHeight,
+          padding: SSpacingStyle.paddingWithAppBarHeight,
           child: Column(
             children: [
               /// Logo, Title & Subtitle
@@ -28,8 +28,8 @@ class LoginScreen extends StatelessWidget {
               /// Form
               const LoginForm(),
               /// Divider
-              FormDivider(dark: dark, dividerText: TTexts.orSignInWith.capitalize!),
-              const SizedBox(height: TSizes.spaceBtwSections),
+              FormDivider(dark: dark, dividerText: STexts.orSignInWith.capitalize!),
+              const SizedBox(height: SSizes.spaceBtwSections),
               /// Footer
               const FormFooter()
             ],

@@ -1,4 +1,4 @@
-class TTexts {
+class STexts {
   // -- GLOBAL Texts
   static const String submit = "Submit";
   static const String appName = "ShopSphere";
@@ -51,6 +51,10 @@ class TTexts {
   static const String yourAccountCreatedTitle = "Your account successfully created";
   static const String yourAccountCreatedSubTitle = "Welcome to Your Ultimate Shopping Destination: Your Account is Created, Unleash the Joy of Seamless Online Shopping!";
 
+
+  // Home
+  static const String homeAppBarTitle = "Good day for shooping";
+  static const String homeAppBarSubTitle = "Ashish Gupta";
 
 
 

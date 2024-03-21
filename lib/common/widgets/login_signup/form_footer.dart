@@ -18,27 +18,27 @@ class FormFooter extends StatelessWidget {
       children: [
         Container(
           decoration: BoxDecoration(
-              border: Border.all(color: TColors.grey),
+              border: Border.all(color: SColors.grey),
               borderRadius: BorderRadius.circular(100)),
           child: IconButton(
             onPressed: () {},
             icon: const Image(
-                width: TSizes.iconMd,
-                height: TSizes.iconMd,
-                image: AssetImage(TImages.google)),
+                width: SSizes.iconMd,
+                height: SSizes.iconMd,
+                image: AssetImage(SImages.google)),
           ),
         ),
-        const SizedBox(width: TSizes.spaceBtwItems),
+        const SizedBox(width: SSizes.spaceBtwItems),
         Container(
           decoration: BoxDecoration(
-              border: Border.all(color: TColors.grey),
+              border: Border.all(color: SColors.grey),
               borderRadius: BorderRadius.circular(100)),
           child: IconButton(
             onPressed: () {},
             icon: const Image(
-                width: TSizes.iconMd,
-                height: TSizes.iconMd,
-                image: AssetImage(TImages.facebook)),
+                width: SSizes.iconMd,
+                height: SSizes.iconMd,
+                image: AssetImage(SImages.facebook)),
           ),
         ),
       ],

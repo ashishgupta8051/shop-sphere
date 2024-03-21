@@ -23,26 +23,26 @@ class ResetPassword extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(TSizes.defaultSpace),
+          padding: const EdgeInsets.all(SSizes.defaultSpace),
           child: Column(
             children: [
               ///Image
               Image(
-                  width: THelperFunctions.screenWidth() * 0.6,
+                  width: SHelperFunctions.screenWidth() * 0.6,
                   image: const AssetImage(
-                    TImages.deliveredEmailIllustration,
+                    SImages.deliveredEmailIllustration,
                   )),
-              const SizedBox(height: TSizes.spaceBtwItems),
+              const SizedBox(height: SSizes.spaceBtwItems),
 
               ///Title $ Subtitle
-              Text(TTexts.changeYourPasswordTitle,
+              Text(STexts.changeYourPasswordTitle,
                   style: Theme.of(context).textTheme.headlineMedium,
                   textAlign: TextAlign.center),
-              const SizedBox(height: TSizes.spaceBtwItems),
-              Text(TTexts.changeYourPasswordSubTitle,
+              const SizedBox(height: SSizes.spaceBtwItems),
+              Text(STexts.changeYourPasswordSubTitle,
                   style: Theme.of(context).textTheme.labelMedium,
                   textAlign: TextAlign.center),
-              const SizedBox(height: TSizes.spaceBtwSections),
+              const SizedBox(height: SSizes.spaceBtwSections),
 
               ///Buttons
               SizedBox(
@@ -51,13 +51,13 @@ class ResetPassword extends StatelessWidget {
                       onPressed: () {
                         Get.back();
                       },
-                      child: const Text(TTexts.done))),
-              const SizedBox(height: TSizes.spaceBtwItems),
+                      child: const Text(STexts.done))),
+              const SizedBox(height: SSizes.spaceBtwItems),
               SizedBox(
                   width: double.infinity,
                   child: TextButton(
                       onPressed: () {},
-                      child: const Text(TTexts.resendEmail))),
+                      child: const Text(STexts.resendEmail))),
             ],
           ),
         ),

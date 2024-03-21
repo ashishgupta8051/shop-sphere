@@ -14,7 +14,7 @@ class VerifyEmailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
+    final dark = SHelperFunctions.isDarkMode(context);
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -26,34 +26,34 @@ class VerifyEmailScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(TSizes.defaultSpace),
+          padding: const EdgeInsets.all(SSizes.defaultSpace),
           child: Column(
             children: [
               ///Image
               Image(
-                  width: THelperFunctions.screenWidth() * 0.6,
+                  width: SHelperFunctions.screenWidth() * 0.6,
                   image: const AssetImage(
-                    TImages.deliveredEmailIllustration,
+                    SImages.deliveredEmailIllustration,
                   )),
-              const SizedBox(height: TSizes.spaceBtwItems),
+              const SizedBox(height: SSizes.spaceBtwItems),
               ///Title $ Subtitle
-              Text(TTexts.confirmEmail, style: Theme.of(context).textTheme.headlineMedium, textAlign: TextAlign.center),
-              const SizedBox(height: TSizes.spaceBtwItems),
+              Text(STexts.confirmEmail, style: Theme.of(context).textTheme.headlineMedium, textAlign: TextAlign.center),
+              const SizedBox(height: SSizes.spaceBtwItems),
               Text("ashishgupta8051@gmail.com", style: Theme.of(context).textTheme.labelLarge, textAlign: TextAlign.center),
-              const SizedBox(height: TSizes.spaceBtwItems),
-              Text(TTexts.confirmEmailSubTitle, style: Theme.of(context).textTheme.labelMedium, textAlign: TextAlign.center),
-              const SizedBox(height: TSizes.spaceBtwSections),
+              const SizedBox(height: SSizes.spaceBtwItems),
+              Text(STexts.confirmEmailSubTitle, style: Theme.of(context).textTheme.labelMedium, textAlign: TextAlign.center),
+              const SizedBox(height: SSizes.spaceBtwSections),
               ///Buttons
               SizedBox(width: double.infinity, child: ElevatedButton(onPressed: (){
                 Get.to(() => SuccessScreen(
-                  image: TImages.staticSuccessIllustration,
-                  title: TTexts.yourAccountCreatedTitle,
-                  subTitle: TTexts.yourAccountCreatedSubTitle,
+                  image: SImages.staticSuccessIllustration,
+                  title: STexts.yourAccountCreatedTitle,
+                  subTitle: STexts.yourAccountCreatedSubTitle,
                   onPressed: () => Get.to(() => const LoginScreen()),
                 ));
-              }, child: const Text(TTexts.tContinue))),
-              const SizedBox(height: TSizes.spaceBtwItems),
-              SizedBox(width: double.infinity, child: TextButton(onPressed: (){}, child: const Text(TTexts.resendEmail))),
+              }, child: const Text(STexts.tContinue))),
+              const SizedBox(height: SSizes.spaceBtwItems),
+              SizedBox(width: double.infinity, child: TextButton(onPressed: (){}, child: const Text(STexts.resendEmail))),
             ],
           ),
         ),

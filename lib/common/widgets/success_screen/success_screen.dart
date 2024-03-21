@@ -17,26 +17,26 @@ class SuccessScreen extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
           child: Padding(
-              padding: TSpacingStyle.paddingWithAppBarHeight * 2,
+              padding: SSpacingStyle.paddingWithAppBarHeight * 2,
               child: Column(
                 children: [
                   ///Image
                   Image(
-                      width: THelperFunctions.screenWidth() * 0.6,
+                      width: SHelperFunctions.screenWidth() * 0.6,
                       image: AssetImage(
                         image,
                       )),
-                  const SizedBox(height: TSizes.spaceBtwItems),
+                  const SizedBox(height: SSizes.spaceBtwItems),
 
                   ///Title $ Subtitle
                   Text(title,
                       style: Theme.of(context).textTheme.headlineMedium,
                       textAlign: TextAlign.center),
-                  const SizedBox(height: TSizes.spaceBtwItems),
+                  const SizedBox(height: SSizes.spaceBtwItems),
                   Text(subTitle,
                       style: Theme.of(context).textTheme.labelMedium,
                       textAlign: TextAlign.center),
-                  const SizedBox(height: TSizes.spaceBtwSections),
+                  const SizedBox(height: SSizes.spaceBtwSections),
 
                   ///Buttons
                   SizedBox(
@@ -45,7 +45,7 @@ class SuccessScreen extends StatelessWidget {
                           onPressed: () {
                             Get.offAll(() => const LoginScreen());
                           },
-                          child: const Text(TTexts.tContinue))),
+                          child: const Text(STexts.tContinue))),
                 ],
               ))),
     );

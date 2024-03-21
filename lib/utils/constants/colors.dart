@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class TColors {
-  TColors._();
+class SColors {
+  SColors._();
 
   //App Basic Color
   static const Color primary = Color(0xFF4b68ff);
@@ -30,7 +30,7 @@ class TColors {
 
   // Background Container Colors
   static const Color lightContainer = Color(0xFFFFF6F6);
-  static Color darkContainer = TColors.white.withOpacity(0.1);
+  static Color darkContainer = SColors.white.withOpacity(0.1);
 
 // Button Colors
   static const Color buttonPrimary = Color(0xFF4b68ff);

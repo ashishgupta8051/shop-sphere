@@ -1,7 +1,7 @@
 
 import 'package:intl/intl.dart';
 
-class TFormatter {
+class SFormatter {
 
   static String formatDate(DateTime? dateTime) {
     dateTime ??= DateTime.now();

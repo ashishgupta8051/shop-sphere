@@ -14,7 +14,7 @@ class ForgetPassword extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
+    final dark = SHelperFunctions.isDarkMode(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -25,33 +25,33 @@ class ForgetPassword extends StatelessWidget {
           },
           child: Icon(
             CupertinoIcons.back,
-            color: dark ? TColors.white : TColors.black, // Change the color of the arrow icon
+            color: dark ? SColors.white : SColors.black, // Change the color of the arrow icon
           ),
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(TSizes.defaultSpace),
+        padding: const EdgeInsets.all(SSizes.defaultSpace),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             /// Heading
-            Text(TTexts.forgetPasswordTitle, style: Theme.of(context).textTheme.headlineMedium),
-            const SizedBox(height: TSizes.spaceBtwItems),
-            Text(TTexts.forgetPasswordTitle, style: Theme.of(context).textTheme.labelMedium),
-            const SizedBox(height: TSizes.spaceBtwSections * 2),
+            Text(STexts.forgetPasswordTitle, style: Theme.of(context).textTheme.headlineMedium),
+            const SizedBox(height: SSizes.spaceBtwItems),
+            Text(STexts.forgetPasswordTitle, style: Theme.of(context).textTheme.labelMedium),
+            const SizedBox(height: SSizes.spaceBtwSections * 2),
 
             /// Text Field
             TextFormField(
               decoration: const InputDecoration(
-                labelText: TTexts.email, prefixIcon: Icon(Iconsax.direct_right)
+                labelText: STexts.email, prefixIcon: Icon(Iconsax.direct_right)
               ),
             ),
-            const SizedBox(height: TSizes.spaceBtwSections),
+            const SizedBox(height: SSizes.spaceBtwSections),
 
             /// Submit Button
             SizedBox(width: double.infinity, child: ElevatedButton(onPressed: (){
               Get.off(() => const ResetPassword());
-            }, child: const Text(TTexts.submit)))
+            }, child: const Text(STexts.submit)))
           ],
         ),
       ),

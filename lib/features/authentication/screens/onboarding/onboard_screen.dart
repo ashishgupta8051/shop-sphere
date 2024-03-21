@@ -23,17 +23,17 @@ class OnBoardingScreen extends StatelessWidget {
             onPageChanged: controller.updatePageIndicator,
             children: const [
               OnBoardingPage(
-                  image: TImages.delivery,
-                  title: TTexts.onBoardingTitle1,
-                  subTitle: TTexts.onBoardingSubTitle1),
+                  image: SImages.delivery,
+                  title: STexts.onBoardingTitle1,
+                  subTitle: STexts.onBoardingSubTitle1),
               OnBoardingPage(
-                  image: TImages.searching,
-                  title: TTexts.onBoardingTitle2,
-                  subTitle: TTexts.onBoardingSubTitle2),
+                  image: SImages.searching,
+                  title: STexts.onBoardingTitle2,
+                  subTitle: STexts.onBoardingSubTitle2),
               OnBoardingPage(
-                  image: TImages.shopping,
-                  title: TTexts.onBoardingTitle3,
-                  subTitle: TTexts.onBoardingSubTitle3),
+                  image: SImages.shopping,
+                  title: STexts.onBoardingTitle3,
+                  subTitle: STexts.onBoardingSubTitle3),
             ],
           ),
           //Skip Button

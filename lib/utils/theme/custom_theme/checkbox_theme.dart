@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../constants/colors.dart';
 
-class TCheckboxTheme {
-  TCheckboxTheme._(); // To avoid creating instances
+class SCheckboxTheme {
+  SCheckboxTheme._(); // To avoid creating instances
 
   /// Customizable Light Text Theme
   static CheckboxThemeData lightCheckboxTheme = CheckboxThemeData(
@@ -17,7 +17,7 @@ class TCheckboxTheme {
     }),
     fillColor: MaterialStateProperty.resolveWith((states) {
       if (states.contains(MaterialState.selected)) {
-        return TColors.primary;
+        return SColors.primary;
       } else {
         return Colors.transparent;
       }
@@ -36,7 +36,7 @@ class TCheckboxTheme {
     }),
     fillColor: MaterialStateProperty.resolveWith((states) {
       if (states.contains(MaterialState.selected)) {
-        return TColors.primary;
+        return SColors.primary;
       } else {
         return Colors.transparent;
       }
