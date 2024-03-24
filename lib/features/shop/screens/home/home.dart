@@ -1,6 +1,9 @@
+import 'package:ShopSphere/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:ShopSphere/common/widgets/texts/section_heading.dart';
 import 'package:ShopSphere/features/shop/screens/home/widgets/home_categories.dart';
+import 'package:ShopSphere/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:ShopSphere/features/shop/screens/home/widgets/shome_app_bar.dart';
+import 'package:ShopSphere/utils/constants/image_strings.dart';
 import 'package:ShopSphere/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
@@ -11,7 +14,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -26,7 +29,10 @@ class HomeScreen extends StatelessWidget {
                 ),
 
                 /// SearchBar
-                SSearchContainer(text: "Search in store", onTap: (){},),
+                SSearchContainer(
+                  text: "Search in store",
+                  onTap: () {},
+                ),
                 const SizedBox(
                   height: SSizes.spaceBtwSections,
                 ),
@@ -50,15 +56,29 @@ class HomeScreen extends StatelessWidget {
                 )
               ],
             )),
+            /// Body part - Slider Banner & Body Product
+            const Padding(
+              padding: EdgeInsets.all(SSizes.spaceBtwItems),
+              child: Column(
+                children: [
+                  SPromoSlider(
+                    banners: [
+                      SImages.promoBanner1,
+                      SImages.promoBanner2,
+                      SImages.promoBanner3,
+                    ],
+                  ),
+                  SizedBox(height: SSizes.spaceBtwSections,),
+                  SProductCardVertical(
 
-            /// Body part - Slider Banner
-            
+                  )
+                ],
+              )
+            ),
           ],
         ),
       ),
     );
   }
 }
-
-
 
