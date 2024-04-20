@@ -49,8 +49,8 @@ class SColors {
 
   // Neutral Shades
   static const Color black = Color(0xFF232323);
-  static const Color darkerGrey = Color(0xFFF4F4F4);
-  static const Color darkGrey = Color(0xFFF939393);
+  static  Color darkerGrey = const Color(0xFFA9A9A9).withOpacity(0.4);
+  static const Color darkGrey = Color(0xfff939393);
   static const Color grey = Color(0xFFE0E0E0);
   static const Color softGrey = Color(0xFFF4F4F4);
   static const Color lightGrey = Color(0xFFF9F9F9);

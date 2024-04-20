@@ -25,49 +25,48 @@ class SProductCardVertical extends StatelessWidget {
         decoration: BoxDecoration(
             boxShadow: [SShadowStyle.verticalProductShadow],
             borderRadius: BorderRadius.circular(SSizes.productImageRadius),
-            color: dark ? SColors.darkGrey : SColors.white),
+            color: dark ? SColors.darkerGrey : SColors.white),
         child: Column(
           children: [
             /// Thumbnail , Wishlist Button, Discount btn
-            Padding(
-              padding: const EdgeInsets.all(SSizes.xs),
-              child: SRoundedContainer(
-                height: 180,
-                padding: const EdgeInsets.all(SSizes.sm),
-                backgroundColor: dark ? SColors.light : SColors.light,
-                child: Stack(
-                  children: [
-                    const SRoundedImage(
-                        imageUrl: SImages.productImage1, applyImageRadius: true),
-                    Positioned(
-                      top: 12,
-                      child: SRoundedContainer(
-                        radius: SSizes.sm,
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: SSizes.sm, vertical: SSizes.xs),
-                        backgroundColor: SColors.secondary.withOpacity(0.8),
-                        child: Text(
-                          "25%",
-                          style: Theme.of(context)
-                              .textTheme
-                              .labelLarge!
-                              .apply(color: SColors.black),
-                        ),
+            SRoundedContainer(
+              width: 200,
+              height: 180,
+              padding: const EdgeInsets.all(SSizes.sm),
+              backgroundColor: dark ? SColors.dark : SColors.light,
+              child: Stack(
+                children: [
+                  const SRoundedImage(imageUrl: SImages.productImage1, applyImageRadius: true),
+                  Positioned(
+                    top: 12,
+                    child: SRoundedContainer(
+                      radius: SSizes.sm,
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: SSizes.sm, vertical: SSizes.xs),
+                      backgroundColor: SColors.secondary.withOpacity(0.8),
+                      child: Text(
+                        "25%",
+                        style: Theme.of(context)
+                            .textTheme
+                            .labelLarge!
+                            .apply(color: SColors.black),
                       ),
                     ),
-                    const Positioned(
-                        top: 0,
-                        right: 0,
-                        child: SCircularIcon(
-                          iconData: Iconsax.heart5,
-                          color: Colors.red,
-                        ))
-                  ],
-                ),
+                  ),
+                  const Positioned(
+                      top: 0,
+                      right: 0,
+                      child: SCircularIcon(
+                        width: 40,
+                        height: 40,
+                        iconData: Iconsax.heart5,
+                        color: Colors.red,
+                      ))
+                ],
               ),
             ),
             const SizedBox(height: SSizes.spaceBtwItems / 2),
-      
+
             /// Details
             Padding(
               padding: const EdgeInsets.all(SSizes.sm),
@@ -94,32 +93,37 @@ class SProductCardVertical extends StatelessWidget {
                       )
                     ],
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const SProductPriceText(price: "35"),
-                      Container(
-                        decoration: const BoxDecoration(
-                            color: SColors.dark,
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(SSizes.cardRadiusMd),
-                                bottomRight:
-                                    Radius.circular(SSizes.productImageRadius))),
-                        child: const SizedBox(
-                            width: SSizes.iconLg * 1.2,
-                            height: SSizes.iconLg * 1.2,
-                            child: Center(
-                              child: Icon(
-                                Iconsax.add,
-                                color: SColors.white,
-                              ),
-                            )),
-                      )
-                    ],
-                  ),
                 ],
               ),
-            )
+            ),
+
+            const Spacer(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(left: SSizes.sm),
+                  child: SProductPriceText(price: "35"),
+                ),
+                Container(
+                  decoration: const BoxDecoration(
+                      color: SColors.dark,
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(SSizes.cardRadiusMd),
+                          bottomRight:
+                          Radius.circular(SSizes.productImageRadius))),
+                  child: const SizedBox(
+                      width: SSizes.iconLg * 1.2,
+                      height: SSizes.iconLg * 1.2,
+                      child: Center(
+                        child: Icon(
+                          Iconsax.add,
+                          color: SColors.white,
+                        ),
+                      )),
+                )
+              ],
+            ),
           ],
         ),
       ),

@@ -63,6 +63,7 @@ class HomeScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(SSizes.spaceBtwItems),
                 child: Column(
                   children: [
+                    /// Slider
                     const SPromoSlider(
                       banners: [
                         SImages.promoBanner1,
@@ -73,6 +74,12 @@ class HomeScreen extends StatelessWidget {
                     const SizedBox(
                       height: SSizes.spaceBtwSections,
                     ),
+                    /// Heading
+                     SSectionHeading(title: "Popular Products", onPressed: (){},),
+                    const SizedBox(
+                      height: SSizes.spaceBtwItems,
+                    ),
+                    /// Products
                     SGridLayout(itemCount: 4, itemBuilder: (_, index) =>
                               const SProductCardVertical())
                   ],
