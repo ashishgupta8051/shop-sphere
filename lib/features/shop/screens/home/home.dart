@@ -1,3 +1,4 @@
+import 'package:ShopSphere/common/widgets/layouts/grid_layout.dart';
 import 'package:ShopSphere/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:ShopSphere/common/widgets/texts/section_heading.dart';
 import 'package:ShopSphere/features/shop/screens/home/widgets/home_categories.dart';
@@ -56,29 +57,36 @@ class HomeScreen extends StatelessWidget {
                 )
               ],
             )),
-            /// Body part - Slider Banner & Body Product
-            const Padding(
-              padding: EdgeInsets.all(SSizes.spaceBtwItems),
-              child: Column(
-                children: [
-                  SPromoSlider(
-                    banners: [
-                      SImages.promoBanner1,
-                      SImages.promoBanner2,
-                      SImages.promoBanner3,
-                    ],
-                  ),
-                  SizedBox(height: SSizes.spaceBtwSections,),
-                  SProductCardVertical(
 
-                  )
-                ],
-              )
-            ),
+            /// Body part - Slider Banner & Body Product
+            Padding(
+                padding: const EdgeInsets.all(SSizes.spaceBtwItems),
+                child: Column(
+                  children: [
+                    /// Slider
+                    const SPromoSlider(
+                      banners: [
+                        SImages.promoBanner1,
+                        SImages.promoBanner2,
+                        SImages.promoBanner3,
+                      ],
+                    ),
+                    const SizedBox(
+                      height: SSizes.spaceBtwSections,
+                    ),
+                    /// Heading
+                     SSectionHeading(title: "Popular Products", onPressed: (){},),
+                    const SizedBox(
+                      height: SSizes.spaceBtwItems,
+                    ),
+                    /// Products
+                    SGridLayout(itemCount: 4, itemBuilder: (_, index) =>
+                              const SProductCardVertical())
+                  ],
+                )),
           ],
         ),
       ),
     );
   }
 }
-

@@ -10,7 +10,7 @@ class SRoundedImage extends StatelessWidget {
     required this.imageUrl,
     this.applyImageRadius = false,
     this.border,
-    this.backgroundColor = SColors.light,
+    this.backgroundColor,
     this.fit = BoxFit.contain,
     this.padding,
     this.isNetworkImage = false,
@@ -22,7 +22,7 @@ class SRoundedImage extends StatelessWidget {
   final String imageUrl;
   final bool applyImageRadius;
   final BoxBorder? border;
-  final Color backgroundColor;
+  final Color? backgroundColor;
   final BoxFit? fit;
   final EdgeInsetsGeometry? padding;
   final bool isNetworkImage;
@@ -47,10 +47,11 @@ class SRoundedImage extends StatelessWidget {
                 ? BorderRadius.circular(borderRadius)
                 : BorderRadius.zero,
             child: Image(
+                fit: fit,
                 image: isNetworkImage
                     ? AssetImage(imageUrl)
                     : AssetImage(imageUrl) as ImageProvider,
-                fit: fit)),
+                )),
       ),
     );
   }
