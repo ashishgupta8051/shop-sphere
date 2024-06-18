@@ -5,11 +5,14 @@ import 'package:ShopSphere/common/widgets/images/rounded_image.dart';
 import 'package:ShopSphere/common/widgets/texts/product_price_text.dart';
 import 'package:ShopSphere/common/widgets/texts/product_title_text.dart';
 import 'package:ShopSphere/utils/constants/colors.dart';
+import 'package:ShopSphere/utils/constants/enums.dart';
 import 'package:ShopSphere/utils/constants/image_strings.dart';
 import 'package:ShopSphere/utils/constants/sizes.dart';
 import 'package:ShopSphere/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+
+import '../../texts/s_brand_title_text_with_verified_icon.dart';
 
 class SProductCardVertical extends StatelessWidget {
   const SProductCardVertical({super.key});
@@ -68,31 +71,17 @@ class SProductCardVertical extends StatelessWidget {
             const SizedBox(height: SSizes.spaceBtwItems / 2),
 
             /// Details
-            Padding(
-              padding: const EdgeInsets.all(SSizes.sm),
+            const Padding(
+              padding: EdgeInsets.all(SSizes.sm),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SProductTitleText(
+                  SProductTitleText(
                     title: "Green Nike Air Shoes",
                     smallSize: true,
                   ),
-                  const SizedBox(height: SSizes.spaceBtwItems / 2),
-                  Row(
-                    children: [
-                      Text(
-                        "Nike",
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 1,
-                        style: Theme.of(context).textTheme.labelMedium,
-                      ),
-                      const Icon(
-                        Iconsax.verify5,
-                        color: SColors.primary,
-                        size: SSizes.iconXs,
-                      )
-                    ],
-                  ),
+                  SizedBox(height: SSizes.spaceBtwItems / 2),
+                  SBrandTitleTextWithVerifiedIcon(title: "Nike"),
                 ],
               ),
             ),
