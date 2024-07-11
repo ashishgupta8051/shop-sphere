@@ -1,5 +1,4 @@
 import 'package:ShopSphere/common/widgets/appbar/appbar.dart';
-import 'package:ShopSphere/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:ShopSphere/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:ShopSphere/common/widgets/layouts/grid_layout.dart';
 import 'package:ShopSphere/common/widgets/products/cart/cart_menu_icon.dart';
@@ -7,14 +6,10 @@ import 'package:ShopSphere/common/widgets/texts/section_heading.dart';
 import 'package:ShopSphere/common/widgets/brands/brand_card.dart';
 import 'package:ShopSphere/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:ShopSphere/utils/constants/colors.dart';
-import 'package:ShopSphere/utils/constants/image_strings.dart';
 import 'package:ShopSphere/utils/constants/sizes.dart';
 import 'package:ShopSphere/utils/helpers/helper_functions.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import '../../../../common/widgets/appbar/tab_bar.dart';
-import '../../../../common/widgets/brands/brand_show_case.dart';
 
 class Store extends StatelessWidget {
   const Store({super.key});

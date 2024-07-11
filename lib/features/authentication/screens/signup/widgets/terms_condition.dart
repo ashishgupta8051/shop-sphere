@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../utils/constants/colors.dart';
@@ -22,7 +21,7 @@ class TermsCondition extends StatelessWidget {
             width: 24,
             child: Checkbox(value: true, onChanged: (value) {})),
         const SizedBox(width: SSizes.spaceBtwItems),
-        Text.rich(TextSpan(children: [
+        Expanded(child: Text.rich(TextSpan(children: [
           TextSpan(
               text: '${STexts.iAgreeTo} ',
               style: Theme.of(context).textTheme.bodySmall),
@@ -51,7 +50,7 @@ class TermsCondition extends StatelessWidget {
                 decorationColor:
                 dark ? SColors.white : SColors.primary,
               )),
-        ]))
+        ])))
       ],
     );
   }

@@ -5,7 +5,6 @@ import 'package:ShopSphere/common/widgets/images/rounded_image.dart';
 import 'package:ShopSphere/common/widgets/texts/product_price_text.dart';
 import 'package:ShopSphere/common/widgets/texts/product_title_text.dart';
 import 'package:ShopSphere/utils/constants/colors.dart';
-import 'package:ShopSphere/utils/constants/enums.dart';
 import 'package:ShopSphere/utils/constants/image_strings.dart';
 import 'package:ShopSphere/utils/constants/sizes.dart';
 import 'package:ShopSphere/utils/helpers/helper_functions.dart';
