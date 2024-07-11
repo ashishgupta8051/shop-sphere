@@ -16,7 +16,7 @@ class SCategoryTab extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       children: [
         Padding(
-          padding: const EdgeInsets.all(SSizes.defaultSpace),
+          padding: const EdgeInsets.all(SSizes.spaceBtwItems),
           child: Column(
             children: [
               /// Brands

@@ -4,11 +4,13 @@ import 'package:ShopSphere/common/widgets/texts/section_heading.dart';
 import 'package:ShopSphere/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:ShopSphere/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:ShopSphere/features/shop/screens/home/widgets/shome_app_bar.dart';
+import 'package:ShopSphere/utils/constants/colors.dart';
 import 'package:ShopSphere/utils/constants/image_strings.dart';
 import 'package:ShopSphere/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
 import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
+import '../../../../utils/helpers/helper_functions.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -16,6 +18,9 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: SHelperFunctions.isDarkMode(context)
+            ? SColors.black
+            : SColors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -51,10 +56,13 @@ class HomeScreen extends StatelessWidget {
                       SizedBox(
                         height: SSizes.spaceBtwItems,
                       ),
-                      SHomeCategories()
+                      SHomeCategories(),
                     ],
                   ),
-                )
+                ),
+                const SizedBox(
+                  height: SSizes.spaceBtwSections,
+                ),
               ],
             )),
 
