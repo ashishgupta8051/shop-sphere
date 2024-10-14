@@ -1,7 +1,69 @@
+
+//Properties properties = new Properties()
+//File globalPropertiesFile = rootProject.file("../sign3Credential.properties")
+//println "File Path S: ${globalPropertiesFile.absolutePath}"
+//if (globalPropertiesFile.exists()) {
+//    globalPropertiesFile.withReader { reader ->
+//        properties.load(reader)
+//    }
+//}else {
+//    println "Invalid file name: (Expected: sign3Credential.properties)"
+//}
+
+// Load credentials from the .env file
+def dotenv = new Properties()
+def dotenvFile = rootProject.file("../sign3Credential.env")
+println "File Path E: ${dotenvFile.absolutePath}"
+if (dotenvFile.exists()) {
+    dotenvFile.withInputStream { stream ->
+        dotenv.load(stream)
+    }
+}else {
+    println "Not found .env file"
+}
+
 allprojects {
     repositories {
         google()
         mavenCentral()
+//        def repoUrl = properties.getProperty("repoUrl") ?: ""
+//        def repoUsername = properties.getProperty("repoUsername") ?: ""
+//        def repoPassword = properties.getProperty("repoPassword") ?: ""
+//
+//        if (!repoUrl.isEmpty() && repoUrl.startsWith("https://")) {
+//            maven {
+//                url repoUrl
+//                credentials {
+//                    username = repoUsername
+//                    password = repoPassword
+//                }
+//                println "Repository URL S: $repoUrl"
+//                println "Username S: $repoUsername"
+//                println "Password S: $repoPassword"
+//            }
+//        } else {
+//            println "Invalid Maven repository URL or missing credentials in sign3Credential.properties"
+//        }
+
+        def repoUrl = dotenv['REPO_URL'] ?: ""
+        def repoUsername = dotenv['REPO_USERNAME'] ?: ""
+        def repoPassword = dotenv['REPO_PASSWORD'] ?: ""
+
+        if (!repoUrl.isEmpty() && repoUrl.startsWith("https://")) {
+            maven {
+                url repoUrl
+                credentials {
+                    username = repoUsername
+                    password = repoPassword
+                }
+                // Logging for debugging purposes
+                println "Maven repository URL E: $repoUrl"
+                println "Maven repository username E: $repoUsername"
+                println "Maven repository password E: $repoPassword"
+            }
+        }else {
+            println "Invalid repository URL or missing credentials in .env file"
+        }
     }
 }
 

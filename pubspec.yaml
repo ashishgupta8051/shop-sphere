@@ -35,6 +35,14 @@ dependencies:
      ref: master
   flutter_rating_bar: ^4.0.1
   capped_progress_indicator: ^0.0.2
+  fraud_sdk_flutter: ^1.0.17
+#  fraud_sdk_flutter:
+#    hosted:
+#      name: fraud_sdk_flutter 1.0.1
+#      url: https://sign3.jfrog.io/artifactory/intelligence-generic-local-flutter/com/sign3/intelligence/fraud_sdk_flutter/fraud_sdk_flutter-1.0.1.tar.gz/
+#    version: 1.0.1
+
+
 
 
 
