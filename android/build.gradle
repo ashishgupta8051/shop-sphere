@@ -12,7 +12,7 @@
 
 // Load credentials from the .env file
 def dotenv = new Properties()
-def dotenvFile = rootProject.file("../sign3Credential.env")
+def dotenvFile = rootProject.file("../.env")
 println "File Path E: ${dotenvFile.absolutePath}"
 if (dotenvFile.exists()) {
     dotenvFile.withInputStream { stream ->
