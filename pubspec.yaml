@@ -15,7 +15,7 @@ dependencies:
   http: ^1.1.0
   intl: ^0.19.0
   logger: ^2.0.2+1
-  url_launcher: ^6.2.5
+  url_launcher: ^6.3.1
   flutter_native_splash: ^2.3.13
   smooth_page_indicator: ^1.1.0
 
@@ -58,7 +58,7 @@ flutter:
     - assets/images/on_board_images/
     - assets/images/animations/
     - assets/images/banners/
-    - assets/images/content/
+    - assets/images/user/
     - assets/images/products/
     - assets/images/reviews/
     - assets/icons/payment_methods/
