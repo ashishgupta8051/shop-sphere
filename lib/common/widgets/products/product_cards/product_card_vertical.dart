@@ -4,11 +4,14 @@ import 'package:ShopSphere/common/widgets/icons/s_circular_icon.dart';
 import 'package:ShopSphere/common/widgets/images/rounded_image.dart';
 import 'package:ShopSphere/common/widgets/texts/product_price_text.dart';
 import 'package:ShopSphere/common/widgets/texts/product_title_text.dart';
+import 'package:ShopSphere/features/shop/screens/product_details/product_details.dart';
 import 'package:ShopSphere/utils/constants/colors.dart';
 import 'package:ShopSphere/utils/constants/image_strings.dart';
 import 'package:ShopSphere/utils/constants/sizes.dart';
 import 'package:ShopSphere/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../texts/s_brand_title_text_with_verified_icon.dart';
@@ -20,7 +23,7 @@ class SProductCardVertical extends StatelessWidget {
   Widget build(BuildContext context) {
     var dark = SHelperFunctions.isDarkMode(context);
     return GestureDetector(
-      onTap: (){},
+      onTap: () => Get.to(() => const ProductDetails()),
       child: Container(
         width: 180,
         padding: const EdgeInsets.all(1),

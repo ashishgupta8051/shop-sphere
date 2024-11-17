@@ -32,7 +32,7 @@ class SCircularImage extends StatelessWidget {
       padding: EdgeInsets.all(padding),
       decoration: BoxDecoration(
         color: backgroundColor ?? (SHelperFunctions.isDarkMode(context)
-            ? SColors.black
+            ? Colors.black
             : SColors.white),
         borderRadius: BorderRadius.circular(100),
       ),
