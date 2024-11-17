@@ -16,8 +16,8 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: SAppTheme.lightTheme,
       darkTheme: SAppTheme.darkTheme,
-      // home: const OnBoardingScreen(),
-      home: const NavigationMenu(),
+      home: const OnBoardingScreen(),
+      // home: const NavigationMenu(),
     );
   }
 }
