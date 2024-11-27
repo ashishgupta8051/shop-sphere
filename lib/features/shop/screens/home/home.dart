@@ -8,6 +8,7 @@ import 'package:ShopSphere/utils/constants/colors.dart';
 import 'package:ShopSphere/utils/constants/image_strings.dart';
 import 'package:ShopSphere/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_intelligence_sign3/flutter_intelligence_sign3.dart';
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
 import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
 import '../../../../utils/helpers/helper_functions.dart';
@@ -15,8 +16,18 @@ import '../../../../utils/helpers/helper_functions.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
+  Future<void> getIntelligence() async {
+    try {
+      var sign3IntelligenceResponse = await Sign3Intelligence.getIntelligence();
+      print("RESPONSE: ${sign3IntelligenceResponse.toJson()}");
+    } catch (e) {
+      // Handle the error message
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    getIntelligence();
     return Scaffold(
         backgroundColor: SHelperFunctions.isDarkMode(context)
             ? SColors.black

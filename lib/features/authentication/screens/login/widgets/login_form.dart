@@ -3,6 +3,7 @@
 import 'package:ShopSphere/features/authentication/screens/password_configuration/forget_password.dart';
 import 'package:ShopSphere/navigation_menu.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_intelligence_sign3/flutter_intelligence_sign3.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -14,9 +15,12 @@ class LoginForm extends StatelessWidget {
   const LoginForm({
     super.key,
   });
-
+  Future<void> getSessionID() async {
+    print("SESSION ID: ${await Sign3Intelligence.getSessionId()}");
+  }
   @override
   Widget build(BuildContext context) {
+    getSessionID();
     return Form(
         child: Padding(
           padding: const EdgeInsets.symmetric(

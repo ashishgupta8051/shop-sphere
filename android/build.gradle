@@ -1,7 +1,34 @@
+def envProperties = new Properties()
+def envFile = rootProject.file("../.env")
+if (envFile.exists()) {
+    envFile.withInputStream { stream ->
+        envProperties.load(stream)
+    }
+    println ".env file loaded successfully."
+} else {
+    println "Error: .env file not found."
+}
+
 allprojects {
     repositories {
         google()
         mavenCentral()
+
+        def sign3RepoUrl = envProperties['SIGN3_REPO_URL'] ?: ""
+        def sign3Username = envProperties['SIGN3_USERNAME'] ?: ""
+        def sign3Password = envProperties['SIGN3_PASSWORD'] ?: ""
+        if (!sign3RepoUrl.isEmpty() && sign3RepoUrl.startsWith("https://") && !sign3Username.isEmpty() && !sign3Password.isEmpty()) {
+            maven {
+                url sign3RepoUrl
+                credentials {
+                    username = sign3Username
+                    password = sign3Password
+                }
+            }
+        } else {
+            println "Error: Invalid repository URL or missing credentials in .env file."
+        }
+
     }
 }
 
