@@ -4,7 +4,7 @@ publish_to: 'none'
 version: 1.0.0
 
 environment:
-  sdk: '>=3.3.0-261.0.dev <4.0.0'
+  sdk: '>=3.3.4 <4.0.0'
 
 #--------------- PACKAGES ------------------#
 dependencies:
@@ -32,6 +32,10 @@ dependencies:
   carousel_slider: ^5.0.0
   flutter_rating_bar: ^4.0.1
   capped_progress_indicator: ^0.0.2
+
+  # Device Intelligence
+#  testpackage_fraudsdk: ^1.0.4
+  flutter_intelligence_sign3: any
 
 dependency_overrides:
   win32: ^5.2.0
