@@ -8,7 +8,7 @@
 
     <application
         android:label="shopsphere"
-        android:name="${applicationName}"
+        android:name=".MyApp"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

@@ -19,26 +19,26 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // return GetMaterialApp(
-    //   debugShowCheckedModeBanner: false,
-    //   themeMode: ThemeMode.system,
-    //   theme: SAppTheme.lightTheme,
-    //   darkTheme: SAppTheme.darkTheme,
-    //   home: const OnBoardingScreen(),
-    //   // home: const NavigationMenu(),
-    // );
-    return FutureBuilder(
-      future: initializeSDK(),
-      builder: (context, snapshot) {
-        return GetMaterialApp(
-          debugShowCheckedModeBanner: false,
-          themeMode: ThemeMode.system,
-          theme: SAppTheme.lightTheme,
-          darkTheme: SAppTheme.darkTheme,
-          home: const OnBoardingScreen(),
-        );
-      },
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      themeMode: ThemeMode.system,
+      theme: SAppTheme.lightTheme,
+      darkTheme: SAppTheme.darkTheme,
+      home: const OnBoardingScreen(),
+      // home: const NavigationMenu(),
     );
+    // return FutureBuilder(
+    //   future: initializeSDK(),
+    //   builder: (context, snapshot) {
+    //     return GetMaterialApp(
+    //       debugShowCheckedModeBanner: false,
+    //       themeMode: ThemeMode.system,
+    //       theme: SAppTheme.lightTheme,
+    //       darkTheme: SAppTheme.darkTheme,
+    //       home: const OnBoardingScreen(),
+    //     );
+    //   },
+    // );
   }
 
   UpdateOptions getUpdatedOptions(String phone, String id) {

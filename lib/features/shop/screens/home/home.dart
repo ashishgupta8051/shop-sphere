@@ -19,18 +19,20 @@ class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   Future<void> getIntelligence() async {
-    var init = await Sign3Intelligence.isSdkInitialized();
-    if (init){
+    // var init = await Sign3Intelligence.isSdkInitialized();
+    // if (init){
       try {
         // await requestLocationPermission();
         var sign3IntelligenceResponse = await Sign3Intelligence.getIntelligence();
+        Log.i("TAG_SESSION_ID: ",await Sign3Intelligence.getSessionId());
+
         Log.i("TAG_INTELLIGENCE_RESPONSE: ","${sign3IntelligenceResponse.toJson()}");
       } catch (e) {
         Log.i("TAG_GET_INTELLIGENCE_ERROR: ", e.toString());
       }
-    }else {
-      Log.i("TAG_INIT_ASYNC_ERROR: ","false");
-    }
+    // }else {
+    //   Log.i("TAG_INIT_ASYNC_ERROR: ","false");
+    // }
   }
 
   Future<void> requestLocationPermission() async {
