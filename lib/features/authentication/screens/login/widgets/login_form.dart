@@ -4,23 +4,22 @@ import 'package:ShopSphere/features/authentication/screens/password_configuratio
 import 'package:ShopSphere/navigation_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_intelligence_sign3/flutter_intelligence_sign3.dart';
+import 'package:flutter_intelligence_sign3/model/options.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/constants/text_strings.dart';
+import '../../../../../utils/logging/log.dart';
 import '../../signup/signup_screen.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({
     super.key,
   });
-  Future<void> getSessionID() async {
-    print("SESSION ID: ${await Sign3Intelligence.getSessionId()}");
-  }
+
   @override
   Widget build(BuildContext context) {
-    getSessionID();
     return Form(
         child: Padding(
           padding: const EdgeInsets.symmetric(
@@ -90,4 +89,5 @@ class LoginForm extends StatelessWidget {
           ),
         ));
   }
+
 }
