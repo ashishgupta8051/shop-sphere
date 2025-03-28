@@ -19,7 +19,8 @@ class HomeScreen extends StatelessWidget {
   Future<void> getIntelligence() async {
     try {
       var sign3IntelligenceResponse = await Sign3Intelligence.getIntelligence();
-      print("RESPONSE: ${sign3IntelligenceResponse.toJson()}");
+      print("TAG_RESPONSE: ${sign3IntelligenceResponse.toJson()}");
+      print("TAG_SESSION_ID: ${await Sign3Intelligence.getSessionId()}");
     } catch (e) {
       // Handle the error message
     }
