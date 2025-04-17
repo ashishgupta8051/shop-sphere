@@ -20,6 +20,7 @@ class HomeScreen extends StatelessWidget {
     try {
       var sign3IntelligenceResponse = await Sign3Intelligence.getIntelligence();
       print("TAG_RESPONSE: ${sign3IntelligenceResponse.toJson()}");
+      print("TAG_RESPONSE: ${sign3IntelligenceResponse.factoryResetTime}");
       print("TAG_SESSION_ID: ${await Sign3Intelligence.getSessionId()}");
     } catch (e) {
       // Handle the error message
