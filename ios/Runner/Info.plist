@@ -26,6 +26,12 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Turn on location to receive updates when friends are nearby, making it easier to catch up.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Turn on location to receive updates when friends are nearby, making it easier to catch up.</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>XYZ_Bank uses tracking to provide a personalized experience and relevant advertisements.</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
