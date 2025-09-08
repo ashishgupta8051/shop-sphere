@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_intelligence_sign3/flutter_intelligence_sign3.dart';
 import 'package:flutter_intelligence_sign3/model/options.dart';
 import 'package:flutter_intelligence_sign3/model/update_options.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 
 import 'features/authentication/screens/onboarding/onboard_screen.dart';
@@ -19,49 +20,18 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.system,
-      theme: SAppTheme.lightTheme,
-      darkTheme: SAppTheme.darkTheme,
-      home: const OnBoardingScreen(),
-      // home: const NavigationMenu(),
+    return FutureBuilder(
+      future: initializeSDK(),
+      builder: (context, snapshot) {
+        return GetMaterialApp(
+          debugShowCheckedModeBanner: false,
+          themeMode: ThemeMode.system,
+          theme: SAppTheme.lightTheme,
+          darkTheme: SAppTheme.darkTheme,
+          home: const OnBoardingScreen(),
+        );
+      },
     );
-    // return FutureBuilder(
-    //   future: initializeSDK(),
-    //   builder: (context, snapshot) {
-    //     return GetMaterialApp(
-    //       debugShowCheckedModeBanner: false,
-    //       themeMode: ThemeMode.system,
-    //       theme: SAppTheme.lightTheme,
-    //       darkTheme: SAppTheme.darkTheme,
-    //       home: const OnBoardingScreen(),
-    //     );
-    //   },
-    // );
-  }
-
-  UpdateOptions getUpdatedOptions(String phone, String id) {
-    Map<String, String> additionalAttributes = {
-      "TRANSACTION_ID": "76381256165476154713",
-      "DEPOSIT": "5000",
-      "WITHDRAWAL": "2000",
-      "METHOD": "UPI",
-      "STATUS": "SUCCESS",
-      "CURRENCY": "INR",
-      "TIMESTAMP": DateTime.now().millisecondsSinceEpoch.toString(),
-    };
-
-    UpdateOptions updateOptions = UpdateOptionsBuilder()
-        .setPhoneNumber(phone)
-        .setUserId(id)
-        .setPhoneInputType(PhoneInputType.GOOGLE_HINT)
-        .setOtpInputType(OtpInputType.AUTO_FILLED)
-        .setUserEventType(UserEventType.TRANSACTION)
-        .setMerchantId("1234567890")
-        .setAdditionalAttributes(additionalAttributes)
-        .build();
-    return updateOptions;
   }
 
   Options getOptions() {
@@ -74,29 +44,19 @@ class App extends StatelessWidget {
   }
 
   Future<void> initSign3Sdk() async {
-    var initAsync = await Sign3Intelligence.initAsync(getOptions());
-    Log.i("TAG_INIT_ASYNC", initAsync.toString());
+    // var initAsync = await Sign3Intelligence.initAsync(getOptions());
+    // Log.i("TAG_INIT_ASYNC", initAsync.toString());
+    Log.i("TAG_INIT_ASYNC", Sign3Intelligence.isSdkInitialized().toString());
     var stopResult = await Sign3Intelligence.stop();
     Log.i("TAG_STOP", stopResult.toString());
     var id = await Sign3Intelligence.getSessionId();
     Log.i("TAG_INIT_SESSION_ID", id.toString());
-  }
 
-  Future<void> getIntelligence() async {
-    try {
-      var init = await Sign3Intelligence.isSdkInitialized();
-      Log.i("TAG_INIT_ASYNC_RESULT", init.toString());
-      if (init){
-        var intelligence = await Sign3Intelligence.getIntelligence();
-        Log.i("TAG_GET_INTELLIGENCE", intelligence.toJson().toString());
-      }
-    } catch (e) {
-      Log.i("TAG_GET_INTELLIGENCE_ERROR", e.toString());
-    }
-  }
-
-  Future<void> updateOptions(UpdateOptions options) async {
-    await Sign3Intelligence.updateOptions(options);
+    Fluttertoast.showToast(
+      msg: "SessionId: $id",
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: ToastGravity.BOTTOM,
+    );
   }
 }
 

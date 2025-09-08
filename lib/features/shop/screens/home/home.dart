@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:ShopSphere/common/widgets/layouts/grid_layout.dart';
 import 'package:ShopSphere/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:ShopSphere/common/widgets/texts/section_heading.dart';
@@ -9,6 +11,7 @@ import 'package:ShopSphere/utils/constants/image_strings.dart';
 import 'package:ShopSphere/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_intelligence_sign3/flutter_intelligence_sign3.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
 import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
 import '../../../../utils/helpers/helper_functions.dart';
@@ -19,10 +22,23 @@ class HomeScreen extends StatelessWidget {
   Future<void> getIntelligence() async {
     try {
       var sign3IntelligenceResponse = await Sign3Intelligence.getIntelligence();
-      print("TAG_RESPONSE: ${sign3IntelligenceResponse.toJson()}");
-      print("TAG_RESPONSE: ${sign3IntelligenceResponse.factoryResetTime}");
-      print("TAG_SESSION_ID: ${await Sign3Intelligence.getSessionId()}");
+      if (Platform.isAndroid) {
+        Fluttertoast.showToast(
+          msg: "Request ID (Android): ${sign3IntelligenceResponse?.requestId}",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.BOTTOM,
+        );
+        print("TAG_RESPONSE_ANDROID: ${sign3IntelligenceResponse?.toJsonAndroid()}");
+      } else {
+        Fluttertoast.showToast(
+          msg: "Request ID (iOS): ${sign3IntelligenceResponse?.requestId}",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.BOTTOM,
+        );
+        print("TAG_RESPONSE_IOS: ${sign3IntelligenceResponse?.toJsonIos()}");
+      }
     } catch (e) {
+      print("TAG_EXCEPTION: ${e.toString()}");
       // Handle the error message
     }
   }

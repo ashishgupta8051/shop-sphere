@@ -3,7 +3,6 @@
 
 <!--    <uses-sdk tools:overrideLibrary="com.sign3.intelligence.flutter_intelligence_sign3"/> -->
 <!--    <uses-sdk tools:overrideLibrary="com.sign3.intelligence.testpackage_fraudsdk,io.github.vvb2060.ndk.xposeddetector"/>-->
-    <uses-sdk tools:overrideLibrary="com.sign3.intelligence.flutter_intelligence_sign3,io.github.vvb2060.ndk.xposeddetector"/>
 
 
     <application
