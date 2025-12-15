@@ -1,10 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-<!--    <uses-sdk tools:overrideLibrary="com.sign3.intelligence.flutter_intelligence_sign3"/> -->
-<!--    <uses-sdk tools:overrideLibrary="com.sign3.intelligence.testpackage_fraudsdk,io.github.vvb2060.ndk.xposeddetector"/>-->
-
-
     <application
         android:label="shopsphere"
         android:name=".MyApp"

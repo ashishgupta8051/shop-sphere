@@ -5,16 +5,11 @@ import 'dart:math';
 import 'package:ShopSphere/features/authentication/screens/password_configuration/forget_password.dart';
 import 'package:ShopSphere/navigation_menu.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_intelligence_sign3/flutter_intelligence_sign3.dart';
-import 'package:flutter_intelligence_sign3/model/options.dart';
-import 'package:flutter_intelligence_sign3/model/update_options.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/constants/text_strings.dart';
-import '../../../../../utils/local_storage/storage_utility.dart';
-import '../../../../../utils/logging/log.dart';
 import '../../signup/signup_screen.dart';
 
 class LoginForm extends StatelessWidget {
@@ -80,9 +75,6 @@ class LoginForm extends StatelessWidget {
                   width: double.infinity,
                   child: ElevatedButton(
                       onPressed: () async {
-                        const _loginKey = 'is_logged_in';
-                        updateOptions(getUpdatedOptions(_emailController.text.trim(), Random().nextInt(10)));
-                        await SLocalStorage.instance.saveData<bool>(_loginKey, true);
                         Get.offAll(() => const NavigationMenu());
                       },
                       child: const Text(STexts.signIn))),
@@ -101,35 +93,5 @@ class LoginForm extends StatelessWidget {
           ),
         ));
   }
-
-  Future<void> updateOptions(UpdateOptions options) async {
-    await Sign3Intelligence.updateOptions(options);
-  }
-
-  UpdateOptions getUpdatedOptions(String phone, int id) {
-    print("TAG_PHONE: $phone");
-    Map<String, String> additionalAttributes = {
-      "TRANSACTION_ID": "76381256165476154713",
-      "DEPOSIT": "5000",
-      "WITHDRAWAL": "2000",
-      "METHOD": "UPI",
-      "STATUS": "SUCCESS",
-      "CURRENCY": "INR",
-      "TIMESTAMP": DateTime.now().millisecondsSinceEpoch.toString(),
-    };
-
-    UpdateOptions updateOptions = UpdateOptionsBuilder()
-        .setPhoneNumber(phone)
-        .setUserId(id.toString())
-        .setPhoneInputType(PhoneInputType.GOOGLE_HINT)
-        .setOtpInputType(OtpInputType.AUTO_FILLED)
-        .setUserEventType(UserEventType.TRANSACTION)
-        .setMerchantId("1234567890")
-        .setAdditionalAttributes(additionalAttributes)
-        .build();
-    return updateOptions;
-  }
-
-
 
 }

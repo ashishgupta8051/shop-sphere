@@ -1,12 +1,7 @@
 import 'package:ShopSphere/navigation_menu.dart';
 import 'package:ShopSphere/utils/local_storage/storage_utility.dart';
-import 'package:ShopSphere/utils/logging/log.dart';
 import 'package:ShopSphere/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_intelligence_sign3/flutter_intelligence_sign3.dart';
-import 'package:flutter_intelligence_sign3/model/options.dart';
-import 'package:flutter_intelligence_sign3/model/update_options.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 
 import 'features/authentication/screens/onboarding/onboard_screen.dart';
@@ -15,66 +10,14 @@ import 'features/authentication/screens/onboarding/onboard_screen.dart';
 class App extends StatelessWidget {
   const App({super.key});
 
-  Future<void> initializeSDK() async {
-    await initSign3Sdk();
-  }
-
   @override
   Widget build(BuildContext context) {
-    final isLoggedIn = SLocalStorage.instance.readData<bool>('is_logged_in') ?? false;
-    print("isLoggedIn_app: $isLoggedIn");
-    if (isLoggedIn) {
-      return FutureBuilder(
-        future: initializeSDK(),
-        builder: (context, snapshot) {
-          return GetMaterialApp(
-            debugShowCheckedModeBanner: false,
-            themeMode: ThemeMode.system,
-            theme: SAppTheme.lightTheme,
-            darkTheme: SAppTheme.darkTheme,
-            home: const NavigationMenu(),
-          );
-        },
-      );
-    }else {
-      return FutureBuilder(
-        future: initializeSDK(),
-        builder: (context, snapshot) {
-          return GetMaterialApp(
-            debugShowCheckedModeBanner: false,
-            themeMode: ThemeMode.system,
-            theme: SAppTheme.lightTheme,
-            darkTheme: SAppTheme.darkTheme,
-            home: const OnBoardingScreen(),
-          );
-        },
-      );
-    }
-
-  }
-
-  Options getOptions() {
-    Options options = OptionsBuilder()
-        .setClientId("test_tenant_flutter")
-        .setClientSecret("secret-3c23efa9-22af-47ff-bd64-42b266d4bf55")
-        .setEnvironment(Environment.PROD)
-        .build();
-    return options;
-  }
-
-  Future<void> initSign3Sdk() async {
-    // var initAsync = await Sign3Intelligence.initAsync(getOptions());
-    // Log.i("TAG_INIT_ASYNC", initAsync.toString());
-    Log.i("TAG_INIT_ASYNC", Sign3Intelligence.isSdkInitialized().toString());
-    var stopResult = await Sign3Intelligence.stop();
-    Log.i("TAG_STOP", stopResult.toString());
-    var id = await Sign3Intelligence.getSessionId();
-    Log.i("TAG_INIT_SESSION_ID", id.toString());
-
-    Fluttertoast.showToast(
-      msg: "SessionId: $id",
-      toastLength: Toast.LENGTH_SHORT,
-      gravity: ToastGravity.BOTTOM,
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      themeMode: ThemeMode.system,
+      theme: SAppTheme.lightTheme,
+      darkTheme: SAppTheme.darkTheme,
+      home: const OnBoardingScreen(),
     );
   }
 }
