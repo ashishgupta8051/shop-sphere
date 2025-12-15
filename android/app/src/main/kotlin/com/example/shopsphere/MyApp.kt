@@ -14,8 +14,8 @@ class MyApp : FlutterApplication() {
             val sign3IntelligencePlugin = Sign3IntelligencePlugin()
             if (sign3IntelligencePlugin.stop()) return
             OptionsBuilder.build(
-                "test_tenant_flutter",
-                "secret-3c23efa9-22af-47ff-bd64-42b266d4bf55",
+                BuildConfig.CLIENT_ID,
+                BuildConfig.SECRET,
                 OptionsBuilder.ENV_PROD  // For Prod: Options.ENV_PROD, For Dev: Options.ENV_DEV
             )
             sign3IntelligencePlugin.initAsync(this)

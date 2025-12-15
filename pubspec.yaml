@@ -38,6 +38,7 @@ dependencies:
   # Device Intelligence
 #  testpackage_fraudsdk: ^1.0.4
   flutter_intelligence_sign3: 2.1.2
+#  shared_preferences: ^2.5.4
 
 dependency_overrides:
   win32: ^5.2.0

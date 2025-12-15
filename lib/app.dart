@@ -1,4 +1,5 @@
 import 'package:ShopSphere/navigation_menu.dart';
+import 'package:ShopSphere/utils/local_storage/storage_utility.dart';
 import 'package:ShopSphere/utils/logging/log.dart';
 import 'package:ShopSphere/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
@@ -20,18 +21,36 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-      future: initializeSDK(),
-      builder: (context, snapshot) {
-        return GetMaterialApp(
-          debugShowCheckedModeBanner: false,
-          themeMode: ThemeMode.system,
-          theme: SAppTheme.lightTheme,
-          darkTheme: SAppTheme.darkTheme,
-          home: const OnBoardingScreen(),
-        );
-      },
-    );
+    final isLoggedIn = SLocalStorage.instance.readData<bool>('is_logged_in') ?? false;
+    print("isLoggedIn_app: $isLoggedIn");
+    if (isLoggedIn) {
+      return FutureBuilder(
+        future: initializeSDK(),
+        builder: (context, snapshot) {
+          return GetMaterialApp(
+            debugShowCheckedModeBanner: false,
+            themeMode: ThemeMode.system,
+            theme: SAppTheme.lightTheme,
+            darkTheme: SAppTheme.darkTheme,
+            home: const NavigationMenu(),
+          );
+        },
+      );
+    }else {
+      return FutureBuilder(
+        future: initializeSDK(),
+        builder: (context, snapshot) {
+          return GetMaterialApp(
+            debugShowCheckedModeBanner: false,
+            themeMode: ThemeMode.system,
+            theme: SAppTheme.lightTheme,
+            darkTheme: SAppTheme.darkTheme,
+            home: const OnBoardingScreen(),
+          );
+        },
+      );
+    }
+
   }
 
   Options getOptions() {

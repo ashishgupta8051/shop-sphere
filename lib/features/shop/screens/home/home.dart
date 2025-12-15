@@ -15,6 +15,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
 import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
 import '../../../../utils/helpers/helper_functions.dart';
+import '../../../../utils/local_storage/storage_utility.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -46,6 +47,10 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     getIntelligence();
+    final isLoggedIn =
+        SLocalStorage.instance.readData<bool>('is_logged_in') ?? false;
+    print("isLoggedIn: $isLoggedIn");
+
     return Scaffold(
         backgroundColor: SHelperFunctions.isDarkMode(context)
             ? SColors.black

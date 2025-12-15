@@ -13,6 +13,7 @@ import 'package:iconsax/iconsax.dart';
 
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/constants/text_strings.dart';
+import '../../../../../utils/local_storage/storage_utility.dart';
 import '../../../../../utils/logging/log.dart';
 import '../../signup/signup_screen.dart';
 
@@ -78,8 +79,10 @@ class LoginForm extends StatelessWidget {
               SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                      onPressed: () {
+                      onPressed: () async {
+                        const _loginKey = 'is_logged_in';
                         updateOptions(getUpdatedOptions(_emailController.text.trim(), Random().nextInt(10)));
+                        await SLocalStorage.instance.saveData<bool>(_loginKey, true);
                         Get.offAll(() => const NavigationMenu());
                       },
                       child: const Text(STexts.signIn))),
