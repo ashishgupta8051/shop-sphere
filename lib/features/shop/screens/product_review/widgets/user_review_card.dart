@@ -29,18 +29,18 @@ class UserReviewCard extends StatelessWidget {
           ),
           IconButton(onPressed:() {}, icon: const Icon(Icons.more_vert))
         ],),
-        const SpaceBetweenItems(),
+        const SpaceBetweenItems(height: true),
 
         /// Review
         Row(
           children: [
             const SRatingBarIndicator(rating: 4),
-            const SpaceBetweenItems(),
+            const SpaceBetweenItems(height: true),
             Text("01 Nov, 2025", style: Theme.of(context).textTheme.bodyMedium,)
           ],
         ),
 
-        const SpaceBetweenItems(),
+        const SpaceBetweenItems(height: true),
         const ReadMoreText("Returns the triggered rule details along with the recommended action (e.g., allow, warn, block), enabling the app to take immediate action based on the specific rule that was fired.",
           trimLines: 2,
           trimMode: TrimMode.Line,
@@ -65,7 +65,7 @@ class UserReviewCard extends StatelessWidget {
                   ],
                 ),
 
-                const SpaceBetweenItems(),
+                const SpaceBetweenItems(height: true),
                 const ReadMoreText("Returns the triggered rule details along with the recommended action (e.g., allow, warn, block), enabling the app to take immediate action based on the specific rule that was fired.",
                   trimLines: 2,
                   trimMode: TrimMode.Line,
@@ -78,7 +78,7 @@ class UserReviewCard extends StatelessWidget {
             ),
           ),
         ),
-        const SpaceBetweenItems(),
+        const SpaceBetweenItems(height: true),
       ],
     );
   }

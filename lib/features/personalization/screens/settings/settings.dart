@@ -2,8 +2,11 @@ import 'package:ShopSphere/common/widgets/appbar/appbar.dart';
 import 'package:ShopSphere/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:ShopSphere/common/widgets/list_tile/settings_menu_tile.dart';
 import 'package:ShopSphere/common/widgets/texts/section_heading.dart';
+import 'package:ShopSphere/features/personalization/address/address.dart';
 import 'package:ShopSphere/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 import '../../../../common/widgets/list_tile/user_profile_tile.dart';
 import '../../../../utils/constants/sizes.dart';
@@ -51,7 +54,7 @@ class SettingsScreen extends StatelessWidget {
                   const SSectionHeading(title: "Account Settings", showActionButton: false,),
                   const SizedBox(height: SSizes.spaceBtwItems,),
 
-                  SSettingMenuTile(iconData: Iconsax.safe_home, title: "My Addresses", subtitle: "Set shopping delivery address", onTap: (){},),
+                  SSettingMenuTile(iconData: Iconsax.safe_home, title: "My Addresses", subtitle: "Set shopping delivery address", onTap: (){Get.to(() => const UserAddressScreen());},),
                   SSettingMenuTile(iconData: Iconsax.shopping_cart, title: "My Cart", subtitle: "Add, remove products and move to checkout", onTap: (){},),
                   SSettingMenuTile(iconData: Iconsax.bag_tick, title: "My Order", subtitle: "In-progress and Completed Orders", onTap: (){},),
                   SSettingMenuTile(iconData: Iconsax.bank, title: "Bank Account", subtitle: "Withdraw balance to register bank account", onTap: (){},),
