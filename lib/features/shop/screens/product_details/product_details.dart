@@ -4,8 +4,11 @@ import 'package:ShopSphere/features/shop/screens/product_details/widgets/product
 import 'package:ShopSphere/features/shop/screens/product_details/widgets/product_image_details_slider.dart';
 import 'package:ShopSphere/features/shop/screens/product_details/widgets/product_meta_data.dart';
 import 'package:ShopSphere/features/shop/screens/product_details/widgets/raring_and_share.dart';
+import 'package:ShopSphere/features/shop/screens/product_review/product_review.dart';
 import 'package:ShopSphere/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 
@@ -65,7 +68,7 @@ class ProductDetails extends StatelessWidget {
                     children: [
                       const SSectionHeading(title: "Reviews (199)", showActionButton: false),
                       IconButton(onPressed: (){
-
+                        Get.to(() =>  const ProductReviewScreen());
                       }, icon: const Icon(Iconsax.arrow_right_3))
                     ],
                   ),
