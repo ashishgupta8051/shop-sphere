@@ -32,8 +32,8 @@ class SProductQuantityWithAddAndRemove extends StatelessWidget {
               width: 32,
               height: 32,
               size: SSizes.md,
-              color: SHelperFunctions.isDarkMode(context) ? SColors.white : SColors.black,
-              backgroundColor: SHelperFunctions.isDarkMode(context) ? SColors.buttonPrimary : SColors.light,
+              color: SHelperFunctions.isDarkMode(context) ? SColors.white : SColors.white,
+              backgroundColor: SHelperFunctions.isDarkMode(context) ? SColors.buttonPrimary : SColors.buttonPrimary,
             ),
           ],
         )
