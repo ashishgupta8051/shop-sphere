@@ -1,7 +1,10 @@
 import 'package:ShopSphere/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../../../../features/shop/screens/cart/cart.dart';
 import '../../../../utils/constants/colors.dart';
 
 class SCartCounterIcon extends StatelessWidget {
@@ -22,7 +25,7 @@ class SCartCounterIcon extends StatelessWidget {
     return Stack(
       children: [
         IconButton(
-            onPressed: onPressed,
+            onPressed: () => Get.to(() => const CartScreen()),
             icon:  Icon(
               Iconsax.shopping_bag,
               color: isHomePage ? imgColor : dark ? SColors.light : SColors.black,
