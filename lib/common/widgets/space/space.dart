@@ -18,6 +18,22 @@ class SpaceBetweenItems extends StatelessWidget {
   }
 }
 
+class SpaceBetweenItemsDivByTwo extends StatelessWidget {
+  const SpaceBetweenItemsDivByTwo({super.key, required this.height,});
+
+  final bool height;
+
+
+  @override
+  Widget build(BuildContext context) {
+    if(height){
+      return const SizedBox(height: SSizes.spaceBtwItems / 2);
+    }else{
+      return const SizedBox(width: SSizes.spaceBtwItems / 2);
+    }
+  }
+}
+
 class DefaultSpace extends StatelessWidget {
   const DefaultSpace({super.key, required this.height,});
 

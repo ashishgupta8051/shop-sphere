@@ -16,7 +16,7 @@ class SCartItems extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.separated(
       shrinkWrap: true,
-      itemCount: 8,
+      itemCount: 2,
       separatorBuilder: (_, __) =>
       const SizedBox(height: SSizes.spaceBtwSections),
       itemBuilder: (_, index) => Column(

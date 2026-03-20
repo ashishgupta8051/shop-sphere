@@ -15,39 +15,44 @@ class SuccessScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-          child: Padding(
-              padding: SSpacingStyle.paddingWithAppBarHeight * 2,
-              child: Column(
-                children: [
-                  ///Image
-                  Image(
-                      width: SHelperFunctions.screenWidth() * 0.6,
-                      image: AssetImage(
-                        image,
-                      )),
-                  const SizedBox(height: SSizes.spaceBtwItems),
+      body: SizedBox(
+        height: SHelperFunctions.screenHeight(),
+        width: SHelperFunctions.screenWidth(),
+        child: Padding(
+            padding: SSpacingStyle.paddingWithAppBarHeight * 2,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ///Image
+                Image(
+                    width: SHelperFunctions.screenWidth() * 0.6,
+                    image: AssetImage(
+                      image,
+                    )),
+                const SizedBox(height: SSizes.spaceBtwItems),
 
-                  ///Title $ Subtitle
-                  Text(title,
-                      style: Theme.of(context).textTheme.headlineMedium,
-                      textAlign: TextAlign.center),
-                  const SizedBox(height: SSizes.spaceBtwItems),
-                  Text(subTitle,
-                      style: Theme.of(context).textTheme.labelMedium,
-                      textAlign: TextAlign.center),
-                  const SizedBox(height: SSizes.spaceBtwSections),
+                ///Title $ Subtitle
+                Text(title,
+                    style: Theme.of(context).textTheme.headlineMedium,
+                    textAlign: TextAlign.center),
+                const SizedBox(height: SSizes.spaceBtwItems),
+                Text(subTitle,
+                    style: Theme.of(context).textTheme.labelMedium,
+                    textAlign: TextAlign.center),
+                const SizedBox(height: SSizes.spaceBtwSections),
 
-                  ///Buttons
-                  SizedBox(
-                      width: double.infinity,
-                      child: ElevatedButton(
-                          onPressed: () {
-                            Get.offAll(() => const LoginScreen());
-                          },
-                          child: const Text(STexts.tContinue))),
-                ],
-              ))),
+                ///Buttons
+                SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                        onPressed: () {
+                          Get.offAll(() => const LoginScreen());
+                        },
+                        child: const Text(STexts.tContinue))),
+              ],
+            )),
+      ),
     );
   }
 }
