@@ -3,6 +3,8 @@ import 'package:ShopSphere/common/widgets/custom_shapes/containers/primary_heade
 import 'package:ShopSphere/common/widgets/list_tile/settings_menu_tile.dart';
 import 'package:ShopSphere/common/widgets/texts/section_heading.dart';
 import 'package:ShopSphere/features/personalization/address/address.dart';
+import 'package:ShopSphere/features/shop/screens/cart/cart.dart';
+import 'package:ShopSphere/features/shop/screens/order/order.dart';
 import 'package:ShopSphere/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -55,8 +57,8 @@ class SettingsScreen extends StatelessWidget {
                   const SizedBox(height: SSizes.spaceBtwItems,),
 
                   SSettingMenuTile(iconData: Iconsax.safe_home, title: "My Addresses", subtitle: "Set shopping delivery address", onTap: (){Get.to(() => const UserAddressScreen());},),
-                  SSettingMenuTile(iconData: Iconsax.shopping_cart, title: "My Cart", subtitle: "Add, remove products and move to checkout", onTap: (){},),
-                  SSettingMenuTile(iconData: Iconsax.bag_tick, title: "My Order", subtitle: "In-progress and Completed Orders", onTap: (){},),
+                  SSettingMenuTile(iconData: Iconsax.shopping_cart, title: "My Cart", subtitle: "Add, remove products and move to checkout", onTap: (){ Get.to(() => const CartScreen());},),
+                  SSettingMenuTile(iconData: Iconsax.bag_tick, title: "My Order", subtitle: "In-progress and Completed Orders", onTap: (){ Get.to(() => const OrderScreen()); },),
                   SSettingMenuTile(iconData: Iconsax.bank, title: "Bank Account", subtitle: "Withdraw balance to register bank account", onTap: (){},),
                   SSettingMenuTile(iconData: Iconsax.discount_shape, title: "My Coupons", subtitle: "List of all the discounted coupons", onTap: (){},),
                   SSettingMenuTile(iconData: Iconsax.notification, title: "Notifications", subtitle: "Set any kinds of notification message", onTap: (){},),
