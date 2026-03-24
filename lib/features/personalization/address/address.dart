@@ -1,5 +1,4 @@
 import 'package:ShopSphere/common/widgets/appbar/appbar.dart';
-import 'package:ShopSphere/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:ShopSphere/features/personalization/address/add_new_address.dart';
 import 'package:ShopSphere/features/personalization/address/widgets/single_address.dart';
 import 'package:ShopSphere/utils/constants/sizes.dart';

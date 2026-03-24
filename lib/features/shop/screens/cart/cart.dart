@@ -3,7 +3,6 @@ import 'package:ShopSphere/features/shop/screens/cart/widgets/cart_items.dart';
 import 'package:ShopSphere/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 import '../checkout/checkout.dart';
 

@@ -4,11 +4,14 @@ import 'package:ShopSphere/common/widgets/layouts/grid_layout.dart';
 import 'package:ShopSphere/common/widgets/products/cart/cart_menu_icon.dart';
 import 'package:ShopSphere/common/widgets/texts/section_heading.dart';
 import 'package:ShopSphere/common/widgets/brands/brand_card.dart';
+import 'package:ShopSphere/features/shop/screens/brand/all_brand.dart';
 import 'package:ShopSphere/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:ShopSphere/utils/constants/colors.dart';
 import 'package:ShopSphere/utils/constants/sizes.dart';
 import 'package:ShopSphere/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import '../../../../common/widgets/appbar/tab_bar.dart';
 
 class Store extends StatelessWidget {
@@ -67,7 +70,9 @@ class Store extends StatelessWidget {
 
                         /// Featured Brand
                         SSectionHeading(
-                            title: "Feature Brand", onPressed: () {}),
+                            title: "Feature Brand", onPressed: () {
+                              Get.to(() => const AllBrandScreen());
+                        }),
                         const SizedBox(
                           height: SSizes.spaceBtwItems / 1.5,
                         ),

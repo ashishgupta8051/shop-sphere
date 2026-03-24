@@ -5,7 +5,6 @@ import 'package:ShopSphere/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_intelligence_sign3/flutter_intelligence_sign3.dart';
 import 'package:flutter_intelligence_sign3/model/options.dart';
-import 'package:flutter_intelligence_sign3/model/update_options.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 

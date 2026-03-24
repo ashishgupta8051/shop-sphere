@@ -1,11 +1,9 @@
 import 'package:ShopSphere/common/widgets/appbar/appbar.dart';
-import 'package:ShopSphere/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:ShopSphere/features/shop/screens/product_review/widgets/overall_product_rating.dart';
-import 'package:ShopSphere/utils/constants/colors.dart';
 import 'package:ShopSphere/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../common/widgets/products/product_cards/rating/ratingbar_indicator.dart';
+import '../../../../common/widgets/products/rating/ratingbar_indicator.dart';
 import '../../../../utils/helpers/helper_functions.dart';
 import 'widgets/user_review_card.dart';
 
@@ -21,7 +19,7 @@ class ProductReviewScreen extends StatelessWidget {
       appBar: const SAppBar(title: Text("Product & Ratings"), showBackArrow: true),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(SSizes.defaultSpace),
+          padding: const EdgeInsets.all(SSizes.defaultSpace),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

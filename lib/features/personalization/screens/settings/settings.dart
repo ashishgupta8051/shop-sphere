@@ -8,7 +8,6 @@ import 'package:ShopSphere/features/shop/screens/order/order.dart';
 import 'package:ShopSphere/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 import '../../../../common/widgets/list_tile/user_profile_tile.dart';
 import '../../../../utils/constants/sizes.dart';

@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:ShopSphere/common/widgets/layouts/grid_layout.dart';
 import 'package:ShopSphere/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:ShopSphere/common/widgets/texts/section_heading.dart';
+import 'package:ShopSphere/features/shop/screens/all_products/all_products.dart';
 import 'package:ShopSphere/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:ShopSphere/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:ShopSphere/features/shop/screens/home/widgets/shome_app_bar.dart';
@@ -12,6 +13,7 @@ import 'package:ShopSphere/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_intelligence_sign3/flutter_intelligence_sign3.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:get/get.dart';
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
 import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
 import '../../../../utils/helpers/helper_functions.dart';
@@ -117,7 +119,7 @@ class HomeScreen extends StatelessWidget {
                       height: SSizes.spaceBtwSections,
                     ),
                     /// Heading
-                     SSectionHeading(title: "Popular Products", onPressed: (){},),
+                     SSectionHeading(title: "Popular Products", onPressed: (){ Get.to(() => const AllProducts()); }),
                     const SizedBox(
                       height: SSizes.spaceBtwItems,
                     ),

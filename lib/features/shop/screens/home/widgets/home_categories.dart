@@ -3,7 +3,6 @@ import 'package:ShopSphere/features/shop/screens/sub_category/sub_category.dart'
 import 'package:ShopSphere/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class SHomeCategories extends StatelessWidget {
   const SHomeCategories({

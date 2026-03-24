@@ -11,7 +11,6 @@ import 'package:ShopSphere/utils/constants/sizes.dart';
 import 'package:ShopSphere/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../texts/s_brand_title_text_with_verified_icon.dart';

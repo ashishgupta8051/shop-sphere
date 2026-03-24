@@ -14,7 +14,6 @@ import 'package:iconsax/iconsax.dart';
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/constants/text_strings.dart';
 import '../../../../../utils/local_storage/storage_utility.dart';
-import '../../../../../utils/logging/log.dart';
 import '../../signup/signup_screen.dart';
 
 class LoginForm extends StatelessWidget {
@@ -25,8 +24,8 @@ class LoginForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Controllers to hold values
-    final TextEditingController _emailController = TextEditingController();
-    final TextEditingController _passwordController = TextEditingController();
+    final TextEditingController emailController = TextEditingController();
+    final TextEditingController passwordController = TextEditingController();
     return Form(
         child: Padding(
           padding: const EdgeInsets.symmetric(
@@ -35,7 +34,7 @@ class LoginForm extends StatelessWidget {
             children: [
               ///Email
               TextFormField(
-                controller: _emailController,
+                controller: emailController,
                 decoration: const InputDecoration(
                     prefixIcon: Icon(Iconsax.direct_right),
                     labelText: STexts.email),
@@ -46,7 +45,7 @@ class LoginForm extends StatelessWidget {
 
               ///Password
               TextFormField(
-                controller: _passwordController,
+                controller: passwordController,
                 decoration: const InputDecoration(
                     prefixIcon: Icon(Iconsax.password_check),
                     labelText: STexts.password,
@@ -80,9 +79,9 @@ class LoginForm extends StatelessWidget {
                   width: double.infinity,
                   child: ElevatedButton(
                       onPressed: () async {
-                        const _loginKey = 'is_logged_in';
-                        updateOptions(getUpdatedOptions(_emailController.text.trim(), Random().nextInt(10)));
-                        await SLocalStorage.instance.saveData<bool>(_loginKey, true);
+                        const loginKey = 'is_logged_in';
+                        updateOptions(getUpdatedOptions(emailController.text.trim(), Random().nextInt(10)));
+                        await SLocalStorage.instance.saveData<bool>(loginKey, true);
                         Get.offAll(() => const NavigationMenu());
                       },
                       child: const Text(STexts.signIn))),

@@ -13,14 +13,16 @@ class SBrandCard extends StatelessWidget {
   const SBrandCard({
     super.key,
     required this.showBorder,
+    this.onTap
   });
 
   final bool showBorder;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: onTap,
       child: SRoundedContainer(
         padding: const EdgeInsets.all(SSizes.sm),
         showBorder: showBorder,

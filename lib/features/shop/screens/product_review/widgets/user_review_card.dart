@@ -1,4 +1,3 @@
-import 'package:ShopSphere/common/widgets/products/product_cards/rating/ratingbar_indicator.dart';
 import 'package:ShopSphere/common/widgets/space/space.dart';
 import 'package:ShopSphere/utils/constants/colors.dart';
 import 'package:ShopSphere/utils/constants/image_strings.dart';
@@ -8,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:readmore/readmore.dart';
 
 import '../../../../../common/widgets/custom_shapes/containers/rounded_container.dart';
+import '../../../../../common/widgets/products/rating/ratingbar_indicator.dart';
 
 class UserReviewCard extends StatelessWidget {
   const UserReviewCard({super.key});

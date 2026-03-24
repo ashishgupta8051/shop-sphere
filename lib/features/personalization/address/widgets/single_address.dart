@@ -16,7 +16,7 @@ class SSingleAddress extends StatelessWidget {
     final dark = SHelperFunctions.isDarkMode(context);
     return SRoundedContainer(
       width: double.infinity,
-      padding: EdgeInsets.all(SSizes.md),
+      padding: const EdgeInsets.all(SSizes.md),
       showBorder: true,
       backgroundColor: selectedAddress
           ? SColors.primary.withOpacity(0.5)
